@@ -1,0 +1,39 @@
+-- ~/.config/nvim/lua/plugins/lualine.lua
+return {
+  "nvim-lualine/lualine.nvim",
+  opts = function()
+    return {
+      options = {
+        theme = "auto",
+        component_separators = "",
+        section_separators = "",
+        disabled_filetypes = { "alpha", "dashboard" },
+        always_divide_middle = true,
+        globalstatus = true,  -- 全局单状态栏
+        -- 关键设置：透明背景
+        background = "NONE",
+        refresh = {
+          statusline = 1000,
+        },
+      },
+      sections = {
+        lualine_a = { "mode" },
+        lualine_b = { "branch", "diff", "diagnostics" },
+        lualine_c = { "filename" },
+        lualine_x = { "encoding", "fileformat", "filetype" },
+        lualine_y = { "progress" },
+        lualine_z = { "location" },
+      },
+      inactive_sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = { "filename" },
+        lualine_x = { "location" },
+        lualine_y = {},
+        lualine_z = {},
+      },
+      tabline = {},
+      extensions = {},
+    }
+  end,
+}

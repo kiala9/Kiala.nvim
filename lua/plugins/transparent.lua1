@@ -1,0 +1,26 @@
+return {
+  "xiyaowong/transparent.nvim",
+  lazy = false,
+  priority = 1000,
+  config = function()
+    require("transparent").setup({
+      extra_groups = {
+        "NormalFloat",
+        "NvimTreeNormal",
+        "StatusLine",
+        "StatusLineNC",
+        "TelescopeNormal",
+        "NeoTreeNormal",
+        "NeoTreeNormalNC",
+        "Pmenu",
+      },
+      exclude_groups = {},
+    })
+
+    vim.cmd("TransparentEnable")
+
+    -- 额外保险：手动清除状态栏背景
+    vim.api.nvim_set_hl(0, "StatusLine", { bg = "NONE", ctermbg = "NONE" })
+    vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "NONE", ctermbg = "NONE" })
+  end,
+}
