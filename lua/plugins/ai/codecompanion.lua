@@ -1,7 +1,7 @@
 local code = require("codecompanion")
 
 if code then
-    vim.env.DEEPSEEK_KEY = "sk-074140dd5309425aac790c88b9d10eb3"
+    vim.env.DEEPSEEK_KEY = ""
     code.setup(
         {
             adapters = {
